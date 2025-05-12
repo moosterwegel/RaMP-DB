@@ -63,7 +63,6 @@ getAnalyteFromPathway <- function(db = RaMP(), pathway, match="exact", analyte_t
     from pathway p, analytehaspathway ap, source s
     where s.rampId = ap.rampID
     and ap.pathwayRampId = p.pathwayRampId
-    and (p.pathwayCategory not like 'smpdb%' or p.pathwayCategory is Null)
     and p.",pathwayMatchCol," in (",list_pathway,") ",
                  "group by s.rampId, p.pathwayName, p.sourceId, p.type, s.geneOrCompound
     order by p.type desc, p.pathwayName asc, s.geneOrCompound asc;")
@@ -80,7 +79,6 @@ getAnalyteFromPathway <- function(db = RaMP(), pathway, match="exact", analyte_t
     from pathway p, analytehaspathway ap, source s
     where s.rampId = ap.rampID
     and ap.pathwayRampId = p.pathwayRampId
-    and (p.pathwayCategory not like 'smpdb%' or p.pathwayCategory is Null)
     and p.",pathwayMatchCol," in (",list_pathway,") ",
                    "group by s.rampId, p.pathwayName, p.sourceId, p.type, s.geneOrCompound
     order by p.type desc, p.pathwayName asc, s.geneOrCompound asc;")
@@ -103,7 +101,6 @@ getAnalyteFromPathway <- function(db = RaMP(), pathway, match="exact", analyte_t
     from pathway p, analytehaspathway ap, source s
     where s.rampId = ap.rampID
     and ap.pathwayRampId = p.pathwayRampId
-    and (p.pathwayCategory not like 'smpdb%' or p.pathwayCategory is Null)
     and p.",pathwayMatchCol," like '%[SOME_PW_NAME]%' group by s.rampId, p.pathwayName, p.sourceId, p.type, s.geneOrCompound
     order by p.type desc, p.pathwayName asc, s.geneOrCompound asc;")
 
@@ -119,7 +116,6 @@ getAnalyteFromPathway <- function(db = RaMP(), pathway, match="exact", analyte_t
     from pathway p, analytehaspathway ap, source s
     where s.rampId = ap.rampID
     and ap.pathwayRampId = p.pathwayRampId
-    and (p.pathwayCategory not like 'smpdb%' or p.pathwayCategory is Null)
     and p.",pathwayMatchCol," like '%[SOME_PW_NAME]%' group by s.rampId, p.pathwayName, p.sourceId, p.type, s.geneOrCompound
     order by p.type desc, p.pathwayName asc, s.geneOrCompound asc;")
     }
